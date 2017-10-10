@@ -17,10 +17,10 @@ Start:
 
 // Useful constants to quickly access:
     LDR R0, =GPIO_BASE	// Load the value of GPIO_BASE into R0 (mem-adress of GPIO)
-	LDR R1, =PORT_SIZE	// Load the value of PORT_SIZE into R1 (36)
-	LDR R10, =0b00000100	// Mask setting PIN_2 to 1
-	LDR R9, =0b001000000000	// Mask for PIN_9 to 1
-// Start actuall use:
+    LDR R1, =PORT_SIZE	// Load the value of PORT_SIZE into R1 (36)
+    LDR R10, =0b00000100	// Mask setting PIN_2 to 1
+    LDR R9, =0b001000000000	// Mask for PIN_9 to 1
+// Start actual use:
 
 // Calculate the memory adress of GPIO_PORT_E_DOUT
     MOV R2, PORT_E		// Move the value of PORT_E into R2
@@ -38,10 +38,10 @@ Start:
     // R12 now has the supposed adress of Port E DOUT
 
 // Calculate the memory adress of GPIO_PORT_B_DIN
-	MOV R2, PORT_B		// Move the value of PORT_B into R2
-	// R2 = 1
-	MOV R3, GPIO_PORT_DIN	// Move the value of GPIO_PORT_DIN into R3
-	// R3 = 28
+    MOV R2, PORT_B		// Move the value of PORT_B into R2
+    // R2 = 1
+    MOV R3, GPIO_PORT_DIN	// Move the value of GPIO_PORT_DIN into R3
+    // R3 = 28
     MUL R2, R2, R1		// Multiplying the value of Port B with Port Size in bytes
     // R2 = 1 * 36 = 36
     ADD R3, R2, R3		// Add the offset of GPIO_PORT_DIN to offset of PORT B
